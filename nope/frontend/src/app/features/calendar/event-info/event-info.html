@@ -1,0 +1,28 @@
+<div class="overlay-events">
+    <div class="event-info-box">
+        <h2 class="event-name">{{this.eventHandler.getCurrentEvent().name}}</h2>
+        <div class = "event-description">{{this.eventHandler.getCurrentEvent().description}}</div>
+        <div class="status-user-box">
+            <div class = "status-user">Bestätigt</div>
+            <div  *ngFor = "let user of this.confirmedUsers" class="userList">  
+                {{user.name}}
+            </div>
+        </div>
+        <div class="status-user-box">
+            <div class = "status-user">Abgelehnt</div>
+            <div  *ngFor = "let user of this.discomfirmedUsers" class="userList">  
+                {{user.name}}
+            </div>
+        </div>
+        <div class="status-user-box">
+            <div class = "status-user">Offen</div>
+            <div  *ngFor = "let user of this.unrespondedUsers" class="userList">  
+                {{user.name}}
+        </div>
+
+        <div class = "modal-buttons">
+            <button (click)="this.eventHandler.closeEventInfo()">Zurück</button>
+            <button class = "delete-btn" (click)="this.eventHandler.deleteEvent(this.eventHandler.getCurrentEvent()._id)">Event löschen</button>
+        </div> 
+    </div>
+</div>

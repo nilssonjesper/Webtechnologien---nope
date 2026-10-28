@@ -1,0 +1,42 @@
+<div class = "list-background">
+    <div class = "list-box">
+        <div class = "status-header">Offen</div>
+        <div class = "entry-box">
+            <div class = "event-entry-divider" *ngFor="let event of unconfirmedEvents">
+                <div class = "event-entry">
+                    <div class = "event-info">
+                        <div class = "event-title">{{event.name}}</div>
+                        <div class = "event-time">{{localeDate(event.startDate)}}</div>   
+                    </div>
+                    <div class = "event-btn">
+                        <button class= "accept-event" (click)="this.confirmEvent(event._id)">✓</button>
+                        <button class = "reject-event" (click)="this.rejectEvent(event._id)">✕</button>
+                    </div>
+
+                </div>
+                <div class = "entry-divider"></div>
+            </div>
+            
+        </div>
+    </div>
+     <div class = "list-box">
+        <div class = "status-header">Bestätigt</div>
+        <div class = "entry-box">
+            <div class = "event-entry-divider" *ngFor="let event of confirmedEvents">
+                <div class = "event-title">{{event.name}}</div>
+                <div class = "event-time">{{localeDate(event.startDate)}}</div>
+                <div class = "entry-divider"></div>
+            </div>
+        </div>
+    </div>
+     <div class = "list-box">
+        <div class = "status-header">Abgelehnt</div>
+        <div class = "entry-box">
+            <div class = "event-entry-divider" *ngFor="let event of cancelledEvents">
+                <div class = "event-title">{{event.name}}</div>
+                <div class = "event-time">{{localeDate(event.startDate)}}</div>
+                <div class = "entry-divider"></div>
+            </div>
+        </div>
+    </div>
+</div>

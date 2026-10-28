@@ -1,0 +1,12 @@
+<nav>
+    <ul>
+        <button (click) = "this.prevDay()" class = "calender-btn">&lt;</button>
+        <button (click) = "nextDay()">&gt;</button>
+        <li>{{this.dataHandler.getCurrentlyShownDateAsString()}}</li>
+        <button (click) = "today()" class = "calender-btn">heute</button>
+        <div>
+            <button (click) = "this.eventHeader.openAddEvent()" class = "add-event-btn">+ </button>
+        </div>
+    </ul>
+
+</nav>

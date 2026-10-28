@@ -1,0 +1,28 @@
+
+nav ul{
+    display: flex;
+    padding-left: max(2%, 5px);
+    background-color: rgb(245, 239, 239); 
+    height: 30px;
+    align-items: center;
+    margin: 2px;
+}
+nav ul li{
+    list-style: none;
+    margin: 2px;
+    margin-left: max(2%, 10px); //auch bei schmalem Fenster unterscheidbar
+    display: flex;
+}
+.calender-btn{
+    list-style: none;
+    margin: 2px;
+    margin-left: max(2%, 10px); //auch bei schmalem Fenster unterscheidbar
+    display: flex;
+}
+nav div{
+    padding-right: max(4%, 15px);
+    width: 100%;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+}

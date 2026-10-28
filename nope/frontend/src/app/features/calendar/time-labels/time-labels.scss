@@ -1,0 +1,16 @@
+* {
+    font-size: x-small;
+}
+body{
+  position: absolute;
+  margin-top: calc(2.5vh - 6.5px);
+  left: 0;
+  right: 0;
+} 
+.gridTime {
+  //distance between lines
+  margin-inline-start: 2.5px;
+  margin-bottom: calc(4vh - 5px);
+  color: rgb(168, 165, 165);
+  height: 5px;
+}

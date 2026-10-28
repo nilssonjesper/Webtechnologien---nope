@@ -1,0 +1,34 @@
+:host {
+    position: absolute;
+    top: 40px; 
+    left: 50%;           //Dropp down in die Mitte schieben
+    transform: translateX(-50%); //Mittig unter Gruppen namen 
+    width: 250px;        
+    background-color: white;
+    color: black;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15); //weicherer Schatten
+    border-radius: 8px;  
+    overflow: hidden;   
+    z-index: 1000;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 12px 20px;
+    text-align: center;  
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+
+    &:hover {
+        background-color: #f9f9f9;
+    }
+    
+    &:last-child {
+        border-bottom: none;
+    }
+}

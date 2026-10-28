@@ -1,0 +1,11 @@
+<div class="dropdown-container">
+    <ul>
+        <li *ngFor="let group of this.modal.getGroups()" (click)="onSelect(group)">
+            {{ group.name }}
+        </li>
+      <hr>
+      <li class="add-btn" (click)="modal.open()">
+        + Neue Gruppe hinzufügen
+      </li>
+    </ul>
+  </div>

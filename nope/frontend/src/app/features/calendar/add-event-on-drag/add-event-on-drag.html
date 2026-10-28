@@ -1,0 +1,22 @@
+<div class="overlay-events">
+    <div class="modal-box-events">
+        <h2 class="test-modal">Event hinzufügen</h2>
+        <form #addEventForm="ngForm">
+            <div class = "input-felder">
+                @if(this.modal.getSelectedGroup() == undefined){<div class = "requiredField">*keine Gruppe ausgewählt</div>}
+                @if(forceName.touched && addEventForm.invalid){<div class="requiredField">*Eventname hinzufügen</div>}
+
+                <input name = "eventName" type="text" [(ngModel)] = "eventName" placeholder="Eventname verpflichtend" required #forceName = "ngModel">
+                <p>{{this.eventHandler.startTimeOnDrag.toLocaleString()}}</p>
+                <p>{{this.eventHandler.endTimeOnDrag.toLocaleString()}}</p>
+                <input name = "description" type="text" [(ngModel)]="description" placeholder="Beschreibung eingeben">
+            </div>
+            
+
+            <div class = "modal-buttons">
+                <button (click)="this.eventHandler.closeAddEventOnDrag()">Zurück</button>
+                <button (click) = "this.eventHandler.addEvent(this.getEventInput())" class="join-btn" [disabled]="addEventForm.invalid  || (this.modal.getSelectedGroup() == undefined)">Hinzufügen</button>
+            </div>  
+        </form>  
+    </div>
+</div>

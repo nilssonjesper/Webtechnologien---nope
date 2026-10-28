@@ -1,0 +1,34 @@
+
+<div class = "timeline-box" 
+    (mousedown)="startDrag($event)" (mousemove)="onDrag($event)" (mouseup)="endDrag($event)">
+    <app-add-event *ngIf="this.eventHandler.getIsAddEventOpen()"></app-add-event>
+    @if (this.eventHandler.getIsAddEventOnDragOpen()) {<app-add-event-on-drag></app-add-event-on-drag>}
+    @if (this.eventHandler.getIsEventInfoOpen()){<app-event-info></app-event-info>}
+
+    <!-- shows daily events -->
+    <div class = "eventsToday"> 
+        <div  *ngFor = "let event of todaysEvents" class = "eventDesign" [style.top.vh]="calcPosition(event.startDate)" [style.height.vh]="getHeight(event.startDate, event.endDate)"> 
+            <div class="event-information">
+                <div class = "event-name"  >{{ event.name }}</div>
+                <div class = "event-description">{{ localDate(event.startDate) }}</div>
+            </div>
+            <div class = "eventSettings" (click)="this.eventHandler.openEventInfo(event)" [style.margin-top.px]= "getHeight(event.startDate, event.endDate)/4">
+                <!-- <div class = "acceptionCount">✓</div> -->
+                <!--<div class = "declineCount">✕</div>-->
+                <button class = "event-setting-btn">⋯</button>
+            </div>
+        </div>
+    </div>
+    <!--shows drag event while adding --> 
+    @if (isDragging) {<div class="dragEventPreview" [style.top.vh]="beginningPreview" [style.height.vh]="heightPreview"></div>}
+    
+    <!--shows current time as moving line--> 
+    <div class = "currentTime" [style.top.vh]="position"><hr></div>
+    <div class = "times-column"> 
+        <app-time-labels></app-time-labels>
+    </div>
+    <div class = "grid-events-column">
+        <app-gridlines></app-gridlines>
+    </div>
+    <div ></div>
+</div>

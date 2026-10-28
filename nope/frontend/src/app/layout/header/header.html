@@ -1,0 +1,22 @@
+<nav>
+    <ul>
+        <li class="nav-placeholder"></li>
+
+        <li class="nav-title">
+            <div class="current-group-display" (click)="modal.toggleDropdown()">
+                {{ modal.getSelectedGroup()?.name || 'Noch keine Gruppe gewählt'}} 
+                <span [class.arrow-up]="modal.isDropdownOpen">
+                    {{ modal.isDropdownOpen ? "▲" : '▼'}}
+                </span>
+            </div>
+        </li>
+
+        <li class="nav-icon" (click)="profile.toggleDropdown_profile()">
+            <span class="material-symbols-outlined">person</span>
+        </li>
+    </ul>
+</nav>
+
+<app-profile *ngIf="profile.getDropdownState_profile()"></app-profile>
+
+<app-group-list *ngIf="modal.getDropdownState()"></app-group-list>

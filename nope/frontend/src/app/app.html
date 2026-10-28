@@ -1,0 +1,16 @@
+<!Login Fenster wird angezeigt, wenn niemand eingeloggt ist>
+
+<app-login *ngIf="login.loginIsVisible()"></app-login>
+
+<!hier roter header/ navigation für gruppe>
+<app-header></app-header>
+
+<app-add-group *ngIf="modal.getIsVisible()"></app-add-group>
+
+<!navigation to toggle between calendar or list view>
+<app-navigation></app-navigation>
+
+<!dark square with either calendar or list view>
+<div class = "background">
+    <router-outlet></router-outlet>
+</div>

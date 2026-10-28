@@ -1,0 +1,42 @@
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.5); // Dunkelt den Hintergrund ab
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; // Ganz oben auf dem Stapel
+  }
+  
+  .modal-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .switch-mode {
+    margin-top: 15px;
+    font-size: 0.9em;
+    
+    span {
+        color: #a82e1a;
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: bold;
+        
+        &:hover {
+            color: #8a2515;
+        }
+    }
+}
+
+  input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+  }

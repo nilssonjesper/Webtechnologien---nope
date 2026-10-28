@@ -1,0 +1,38 @@
+<div class="overlay">
+    <div class="modal-box">
+        <h2>{{ currentView === 'add' ? 'Hinzufügen' : 'Erstellen'}}</h2>
+        <input *ngIf="currentView === 'add'" type="text" placeholder="GruppenID eingeben" [(ngModel)]="groupID">
+        <ng-container *ngIf="currentView === 'create'">
+            <input type="text" placeholder="Name" [(ngModel)]="newGroup.name">
+            <input type="text" placeholder="Beschreibung" [(ngModel)]="newGroup.description">
+            
+            <div class="type-selection">
+                <label>
+                    <input type="radio" [value]="true" [(ngModel)]="newGroup.isPublic"> Öffentlich
+                </label>
+                <label>
+                    <input type="radio" [value]="false" [(ngModel)]="newGroup.isPublic"> Privat
+                </label>
+            </div>
+
+            <input *ngIf="!newGroup.isPublic" type="password" placeholder="Passwort erstellen" [(ngModel)]="newGroup.pwd">
+        </ng-container>
+    
+        <div class="actions">
+            <button (click)="modal.close()">Zurück</button>
+            <button *ngIf="currentView === 'add'" (click)="onJoin()">hinzufügen</button>
+            <button *ngIf="currentView === 'create'" (click)="onCreate(); modal.close()">erstellen</button>
+        </div>
+        <div class="switch-view">
+            <p *ngIf="currentView === 'add'">
+                Neue Gruppe erstellen?
+                <span (click)="switchView('create')">erstellen</span>
+            </p>
+            <p *ngIf="currentView === 'create'">
+                Gruppe Beitreten?
+                <span (click)="switchView('add')">beitreten</span>
+            </p>
+        </div>      
+    </div>
+</div>
+

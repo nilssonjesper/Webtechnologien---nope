@@ -1,0 +1,23 @@
+<div class="overlay">
+    <div class="modal-box">
+        <h2>{{ currentMode === 'login' ? 'Login' : 'Registrieren' }}</h2>
+        <input type="text" placeholder="Email" [(ngModel)]="userData.email">
+        <input *ngIf="currentMode === 'register'" type="text" placeholder="Name" [(ngModel)]="userData.name">
+        <input type="text" placeholder="Password" [(ngModel)]="userData.password">
+        <div class="actions">
+            <button (click)="confirm()">
+                {{ currentMode === 'login' ? 'Einloggen' : 'Account erstellen'}}
+            </button>
+        </div>  
+        <div class="switch-mode">
+            <p *ngIf="currentMode === 'login'">
+                Noch kein Konto?
+                <span (click)="setMode('register')">Registrieren</span>
+            </p>
+            <p *ngIf="currentMode === 'register'">
+                Bereits ein Konto?
+                <span (click)="setMode('login')">Login</span>
+            </p>
+        </div>  
+    </div>
+</div>

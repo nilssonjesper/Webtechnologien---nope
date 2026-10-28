@@ -1,0 +1,76 @@
+*{
+    font-size: small;
+}
+.list-background{
+    background-color: rgb(245, 239, 239); 
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    margin-top: 2px;
+    padding: 0;
+    //height: calc((100vh - 115px)/3);
+    height: calc(100vh - 111px);
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.list-box{
+    border-radius: 16px;
+    background-color: white;
+    margin: 5px;
+    min-height: calc(100vh/8);
+}
+.status-header{
+    padding: 10px;
+    color: rgb(200, 198, 198);
+}
+.entry-box{
+    padding-bottom: 10px;
+}
+
+.event-entry-divider{
+    margin: 2px;
+}
+.event-entry{
+    display: flex;
+    flex-direction: row;
+  
+}
+.event-btn{   
+    padding-right: max(1%, 15px);
+    width: 20%;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+}
+.event-btn button{
+    height: 3vh;
+}
+.accept-event{
+    color: green;
+}
+.reject-event{
+    color: #a82e1a;
+}
+.event-title{
+    margin-left: 5px;
+}
+.event-time{
+    margin-left: 6px;
+    //font-size: x-small;
+    padding-bottom: 5px;
+}
+.entry-divider{ 
+    height: 2px;
+    background-color: rgb(229, 222, 222);
+    margin-bottom: 5px;
+}
+.event-info{
+    width: 80%;
+    //background-color: pink;
+}
+
+
